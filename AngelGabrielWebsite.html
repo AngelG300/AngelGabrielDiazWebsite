@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Gabriel Diaz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #6B1E2E;
+    --burgundy-dark: #4A1220;
+    --burgundy-light: #8C2E42;
+    --burgundy-pale: #F5ECEe;
+    --burgundy-mid: #C25070;
+    --cream: #F7F4EF;
+    --cream-dark: #EDE8E0;
+    --ink: #1A1612;
+    --ink-mid: #3D3530;
+    --ink-light: #6B625A;
+    --ink-faint: #9E948A;
+    --gold: #B8933A;
+    --gold-light: #D4AB52;
+    --white: #FDFBF8;
+    --rule: rgba(107, 30, 46, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(247, 244, 239, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 0 3rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+  }
+
+  .nav-sub {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--burgundy);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--burgundy); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 64px;
+  }
+
+  .hero-left {
+    background: var(--ink);
+    padding: 8rem 5rem 6rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -80px;
+    width: 400px; height: 400px;
+    border: 1px solid rgba(184, 147, 58, 0.12);
+    border-radius: 50%;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    bottom: 60px; left: 40px;
+    width: 200px; height: 200px;
+    border: 1px solid rgba(107, 30, 46, 0.25);
+    border-radius: 50%;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(253, 251, 248, 0.55);
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    max-width: 380px;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 3.5rem;
+  }
+
+  .pill {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 0.5px solid rgba(184, 147, 58, 0.35);
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 13px 28px;
+    background: var(--burgundy);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover { background: var(--burgundy-light); }
+
+  .btn-ghost {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(253, 251, 248, 0.5);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 0.5px solid rgba(253, 251, 248, 0.25);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: var(--white);
+    border-color: rgba(253, 251, 248, 0.6);
+  }
+
+  .hero-right {
+    background: var(--burgundy-pale);
+    padding: 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-mission-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero-mission {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--burgundy-dark);
+    margin-bottom: 2.5rem;
+    border-left: 2px solid var(--burgundy);
+    padding-left: 1.5rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .hero-stat {
+    border-top: 0.5px solid rgba(107, 30, 46, 0.2);
+    padding-top: 1rem;
+  }
+
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--burgundy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 7rem 6rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--burgundy);
+    letter-spacing: 0.1em;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 0.5px;
+    background: var(--rule);
+    align-self: center;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-body p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-body p strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .about-pull {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--burgundy-dark);
+    border-left: 2px solid var(--burgundy);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2rem 0;
+    line-height: 1.55;
+  }
+
+  .about-aside {
+    position: sticky;
+    top: 88px;
+  }
+
+  .about-card {
+    background: var(--cream);
+    border: 0.5px solid var(--rule);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-card-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .focus-list {
+    list-style: none;
+  }
+
+  .focus-list li {
+    font-size: 14px;
+    color: var(--ink-mid);
+    padding: 7px 0;
+    border-bottom: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .focus-list li:last-child { border-bottom: none; }
+
+  .focus-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    flex-shrink: 0;
+  }
+
+  .edu-item {
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  .edu-item:last-child { border-bottom: none; }
+
+  .edu-degree {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .edu-school {
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+
+  /* PROJECTS */
+  #projects {
+    background: var(--cream);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--rule);
+    border: 0.5px solid var(--rule);
+  }
+
+  .project-card {
+    background: var(--white);
+    padding: 2.5rem;
+    transition: background 0.2s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--burgundy);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-card:hover { background: var(--cream); }
+
+  .project-tag {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tech-chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    background: var(--cream-dark);
+    color: var(--ink-mid);
+    letter-spacing: 0.05em;
+  }
+
+  .project-placeholder {
+    background: var(--cream-dark);
+    border: 1.5px dashed rgba(107, 30, 46, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .project-placeholder .project-title {
+    color: var(--ink-faint);
+    font-size: 18px;
+  }
+
+  .project-placeholder p {
+    font-size: 13px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+
+  /* WRITING */
+  #writing {
+    background: var(--ink);
+  }
+
+  #writing .section-title { color: var(--white); }
+  #writing .section-num { color: var(--gold); }
+  #writing .section-rule { background: rgba(255,255,255,0.1); }
+
+  .writing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 0.5px solid rgba(255,255,255,0.08);
+  }
+
+  .essay-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 140px;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.06);
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .essay-row:last-child { border-bottom: none; }
+  .essay-row:hover { background: rgba(255,255,255,0.03); }
+
+  .essay-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  .essay-content { }
+
+  .essay-category {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .essay-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .essay-preview {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  .essay-status {
+    text-align: right;
+  }
+
+  .status-badge {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 12px;
+    display: inline-block;
+  }
+
+  .badge-draft {
+    background: rgba(184, 147, 58, 0.12);
+    color: var(--gold-light);
+    border: 0.5px solid rgba(184, 147, 58, 0.3);
+  }
+
+  .badge-coming {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.3);
+    border: 0.5px solid rgba(255,255,255,0.1);
+  }
+
+  .writing-note {
+    margin-top: 2.5rem;
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+  }
+
+  /* RESUME */
+  #resume {
+    background: var(--burgundy-pale);
+  }
+
+  .resume-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .resume-left {}
+
+  .resume-desc {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    margin-bottom: 2.5rem;
+  }
+
+  .resume-highlights {
+    list-style: none;
+    margin-bottom: 3rem;
+  }
+
+  .resume-highlights li {
+    font-size: 14px;
+    color: var(--ink-light);
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .resume-highlights li:last-child { border-bottom: none; }
+
+  .resume-highlights li::before {
+    content: '';
+    width: 18px; height: 0.5px;
+    background: var(--burgundy);
+    flex-shrink: 0;
+  }
+
+  .resume-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .resume-preview {
+    width: 100%;
+    aspect-ratio: 8.5/11;
+    background: var(--white);
+    border: 0.5px solid var(--rule);
+    box-shadow: 12px 16px 40px rgba(74, 18, 32, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--ink-faint);
+  }
+
+  .resume-preview-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(107,30,46,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .resume-preview p {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--white);
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-left {}
+
+  .contact-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--ink-mid);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-intro em {
+    font-style: italic;
+    color: var(--burgundy-dark);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 0.5px solid var(--rule);
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 0.5px solid var(--rule);
+    text-decoration: none;
+    transition: background 0.2s;
+    group: true;
+  }
+
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { background: var(--cream); }
+
+  .contact-link-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-link-icon {
+    width: 36px; height: 36px;
+    border: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--burgundy);
+    background: var(--cream);
+  }
+
+  .contact-link-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .contact-link-value {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .contact-arrow {
+    color: var(--ink-faint);
+    font-size: 14px;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .contact-link:hover .contact-arrow {
+    transform: translate(3px, -3px);
+    color: var(--burgundy);
+  }
+
+  .contact-right {}
+
+  .contact-form-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 0.5px solid rgba(107, 30, 46, 0.2);
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--burgundy);
+  }
+
+  .form-group textarea { min-height: 120px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 13px;
+    background: var(--burgundy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--burgundy-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 3rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.5px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-left {}
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-mission {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(255,255,255,0.2);
+    max-width: 340px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* HERO ANIMATION */
+  .hero-label { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-name { animation: fadeUp 0.7s ease 0.35s both; }
+  .hero-tagline { animation: fadeUp 0.7s ease 0.5s both; }
+  .hero-pills { animation: fadeUp 0.6s ease 0.65s both; }
+  .hero-cta { animation: fadeUp 0.6s ease 0.8s both; }
+  .hero-mission-label { animation: fadeUp 0.6s ease 0.5s both; }
+  .hero-mission { animation: fadeUp 0.7s ease 0.65s both; }
+  .hero-stats { animation: fadeUp 0.6s ease 0.8s both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    nav { padding: 0 2rem; }
+    section { padding: 5rem 2.5rem; }
+    #home { grid-template-columns: 1fr; }
+    .hero-left { padding: 6rem 2.5rem 4rem; }
+    .hero-right { padding: 4rem 2.5rem; }
+    .about-grid, .resume-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-aside { position: static; }
+    .projects-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .footer-mission { text-align: center; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .essay-row { grid-template-columns: 1fr; gap: 0.75rem; }
+    .essay-num { display: none; }
+    .essay-status { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="nav-name">Angel Gabriel Diaz</span>
+    <span class="nav-sub">Technologist · Future Lawyer · Public Leader</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <p class="hero-label">Angel Gabriel Diaz</p>
+    <h1 class="hero-name">Technology<br><em>Law</em><br>Justice</h1>
+    <p class="hero-tagline">Building the technical and legal expertise to defend democratic institutions in the digital age.</p>
+    <div class="hero-pills">
+      <span class="pill">Cybersecurity</span>
+      <span class="pill">Privacy Law</span>
+      <span class="pill">AI Governance</span>
+      <span class="pill">Election Security</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#about" class="btn-primary">Learn More</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-mission-label">North Star</p>
+    <p class="hero-mission">"I am becoming a technology-law and democratic-systems leader who can modernize elections, protect privacy, regulate AI, and eventually lead at the highest level."</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">CS</div>
+        <div class="hero-stat-label">B.S. at UT Dallas</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">VE</div>
+        <div class="hero-stat-label">Born in Venezuela</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">19</div>
+        <div class="hero-stat-label">Years old. Ambitious.</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">∞</div>
+        <div class="hero-stat-label">Long-term vision</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-body reveal">
+      <p>I grew up in Venezuela — a country where I watched institutions fail, democracy erode, and technology become a tool of control rather than liberation. That experience didn't make me cynical. It made me <strong>determined</strong>.</p>
+      <p>Today I study Computer Science at the University of Texas at Dallas, where I'm building the technical foundation I'll need to work at the intersection of <strong>cybersecurity, law, and democratic governance</strong>. I'm not interested in technology for its own sake. I'm interested in what technology does to power — and what law can do to protect people from its abuses.</p>
+      <blockquote class="about-pull">"The most dangerous systems are the ones no one thought to regulate until it was too late."</blockquote>
+      <p>My path leads toward law school, with a focus on technology law, election security, privacy rights, and AI governance. Long-term, I want to hold the kind of public leadership role that can actually change how democratic institutions are designed and protected — in the United States and across Latin America.</p>
+      <p>I came here as an immigrant. I'm building toward becoming a leader. The distance between those two points is where I do my work.</p>
+    </div>
+    <div class="about-aside reveal">
+      <div class="about-card">
+        <p class="about-card-title">Areas of Focus</p>
+        <ul class="focus-list">
+          <li><span class="focus-dot"></span>Cybersecurity & Digital Infrastructure</li>
+          <li><span class="focus-dot"></span>Privacy Law & Data Rights</li>
+          <li><span class="focus-dot"></span>AI Governance & Regulation</li>
+          <li><span class="focus-dot"></span>Election Security & Integrity</li>
+          <li><span class="focus-dot"></span>Democratic Institutions & Anti-Corruption</li>
+          <li><span class="focus-dot"></span>Technology Policy & Law</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <p class="about-card-title">Education</p>
+        <div class="edu-item">
+          <p class="edu-degree">B.S. Computer Science</p>
+          <p class="edu-school">University of Texas at Dallas &nbsp;·&nbsp; In Progress</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree">J.D. — Future Goal</p>
+          <p class="edu-school">Technology Law · Cybersecurity · Election Law</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <p class="about-card-title">Currently Reading</p>
+        <ul class="focus-list">
+          <li><span class="focus-dot"></span>The Fifth Risk — Michael Lewis</li>
+          <li><span class="focus-dot"></span>Cybersecurity and Cyberwar — Singer & Friedman</li>
+          <li><span class="focus-dot"></span>How Democracies Die — Levitsky & Ziblatt</li>
+          <li><span class="focus-dot"></span>The Age of Surveillance Capitalism — Zuboff</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <p class="project-tag">Cybersecurity</p>
+      <h3 class="project-title">Coming Soon</h3>
+      <p class="project-desc">Active cybersecurity and privacy projects will appear here as they develop. Check back soon.</p>
+      <div class="project-tech">
+        <span class="tech-chip">In Progress</span>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <p class="project-tag">Election Security</p>
+      <h3 class="project-title">Coming Soon</h3>
+      <p class="project-desc">Research into secure digital election infrastructure and the legal frameworks needed to protect it.</p>
+      <div class="project-tech">
+        <span class="tech-chip">In Progress</span>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <p class="project-tag">AI Governance</p>
+      <h3 class="project-title">Coming Soon</h3>
+      <p class="project-desc">Analysis of AI's impact on democratic institutions and what legal accountability frameworks should look like.</p>
+      <div class="project-tech">
+        <span class="tech-chip">In Progress</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top: 2rem; font-size: 13px; color: var(--ink-faint); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 16px;">Projects will be added as they are completed. I am currently in the early stages of building my research and technical portfolio.</p>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Writing</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="writing-list reveal">
+    <div class="essay-row">
+      <span class="essay-num">I</span>
+      <div class="essay-content">
+        <p class="essay-category">Election Security</p>
+        <h3 class="essay-title">Why Election Security Is a Public Trust Problem</h3>
+        <p class="essay-preview">The threat to democratic elections isn't only technical — it's epistemic. When people lose faith in the count, the vote itself loses meaning.</p>
+      </div>
+      <div class="essay-status">
+        <span class="status-badge badge-draft">Draft</span>
+      </div>
+    </div>
+    <div class="essay-row">
+      <span class="essay-num">II</span>
+      <div class="essay-content">
+        <p class="essay-category">Democracy & Technology</p>
+        <h3 class="essay-title">What Venezuela Taught Me About Institutional Trust</h3>
+        <p class="essay-preview">Growing up in a country where institutions were dismantled taught me more about democratic design than any textbook could.</p>
+      </div>
+      <div class="essay-status">
+        <span class="status-badge badge-draft">Draft</span>
+      </div>
+    </div>
+    <div class="essay-row">
+      <span class="essay-num">III</span>
+      <div class="essay-content">
+        <p class="essay-category">AI Governance</p>
+        <h3 class="essay-title">AI, Deepfakes, and Democratic Legitimacy</h3>
+        <p class="essay-preview">Synthetic media doesn't just threaten elections. It threatens the shared factual ground that democracy depends on.</p>
+      </div>
+      <div class="essay-status">
+        <span class="status-badge badge-coming">Coming</span>
+      </div>
+    </div>
+    <div class="essay-row">
+      <span class="essay-num">IV</span>
+      <div class="essay-content">
+        <p class="essay-category">Privacy Law</p>
+        <h3 class="essay-title">Why Privacy Law Matters for Immigrants and Dissidents</h3>
+        <p class="essay-preview">Privacy is not an abstract right. For millions of people, it is the difference between safety and persecution.</p>
+      </div>
+      <div class="essay-status">
+        <span class="status-badge badge-coming">Coming</span>
+      </div>
+    </div>
+    <div class="essay-row">
+      <span class="essay-num">V</span>
+      <div class="essay-content">
+        <p class="essay-category">AI & Democracy</p>
+        <h3 class="essay-title">How AI Can Threaten Democratic Institutions</h3>
+        <p class="essay-preview">From disinformation at scale to algorithmic suppression of dissent — the democratic risks of AI are structural, not just incidental.</p>
+      </div>
+      <div class="essay-status">
+        <span class="status-badge badge-coming">Coming</span>
+      </div>
+    </div>
+  </div>
+  <p class="writing-note reveal">Essays are in development and will be published here when complete.</p>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Resume</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="resume-inner">
+    <div class="resume-left reveal">
+      <p class="resume-desc">I am a first-year Computer Science student at UT Dallas building toward a career at the intersection of cybersecurity, law, and public leadership. My background spans technology, policy, and a deep personal understanding of what happens when democratic institutions fail.</p>
+      <ul class="resume-highlights">
+        <li>Computer Science, University of Texas at Dallas</li>
+        <li>Focus: Cybersecurity, AI, and Election Security</li>
+        <li>Pursuing future J.D. in Technology Law</li>
+        <li>Fluent in English and Spanish</li>
+        <li>Background in Venezuela — firsthand understanding of democratic fragility</li>
+      </ul>
+      <a href="#" class="btn-primary" onclick="alert('Please upload your resume PDF and link it here.'); return false;">Download Resume (PDF)</a>
+    </div>
+    <div class="resume-right reveal">
+      <div class="resume-preview">
+        <div class="resume-preview-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--burgundy);">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <p style="font-size: 13px; color: var(--ink-faint); letter-spacing: 0.05em;">Resume · PDF</p>
+        <p style="font-size: 11px; color: var(--ink-faint); letter-spacing: 0.05em; opacity: 0.6;">Angel Gabriel Diaz</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <p class="contact-intro">I'm open to conversations about <em>internships, research collaboration, cybersecurity projects, law school paths,</em> and anything at the intersection of technology, law, and democracy.</p>
+      <div class="contact-links">
+        <a href="mailto:your@email.com" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <p class="contact-link-label">Email</p>
+              <p class="contact-link-value">your@email.com</p>
+            </div>
+          </div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <p class="contact-link-label">LinkedIn</p>
+              <p class="contact-link-value">Angel Gabriel Diaz</p>
+            </div>
+          </div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </div>
+            <div>
+              <p class="contact-link-label">GitHub</p>
+              <p class="contact-link-value">yourusername</p>
+            </div>
+          </div>
+          <span class="contact-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <p class="contact-form-label">Send a Message</p>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject">
+          <option value="">Select a topic</option>
+          <option>Internship / Opportunity</option>
+          <option>Research Collaboration</option>
+          <option>Cybersecurity Project</option>
+          <option>Law School Questions</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="What would you like to discuss?"></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Form submission requires a backend. Connect this to Formspree or EmailJS to enable it.')">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <p class="footer-name">Angel Gabriel Diaz</p>
+    <p class="footer-copy">© 2025 · All rights reserved</p>
+  </div>
+  <p class="footer-mission">"Technology in service of justice, democracy, and human dignity."</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
